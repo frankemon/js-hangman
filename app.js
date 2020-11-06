@@ -6,6 +6,8 @@ const alphabet =
     'abcdefghijklmnopqrstuvwxyz'.split('');
 console.log(alphabet);
 
+let blanks = [];
+
 function wordPicker() {
     let position = Math.random();
     position = position * (wordBank.length - 1);
@@ -14,29 +16,36 @@ function wordPicker() {
     console.log(position + ' ' + generatedWord);
     return generatedWord;
 }
-console.log(wordBank);
 
+
+console.log(wordBank);
 function blankSpaces(string) {
     for (let index = 0; index < string.length; index++) {
-        // const element = array[index];
+        blanks.push('_');
         console.log('test' + ' ' + index);
-        let element = document.querySelector('#hidden-word');
-        document.createElement('X');
+        console.log(blanks)
 
     }
-
+    updateDOM();
 }
 
-function createKeyboard() {
-    let button = document.createElement("keyboard-button");
-    button = document.createElement('button');
-    button.innerHTML = letter.toUpperCase();
-    button.id = "button-" + letter;
+function updateDOM() {
+    document.querySelector('#hidden-word').textContent = blanks.join(' ');
+}
+// function createKeyboard(letter) {
+// let 
+// let button = document.createElement("keyboard-button");
+// button = document.createElement('button');
+// button.innerHTML = letter.toUpperCase();
+// button.id = "button-" + letter;
 
+// };
+// for (var i = 0; i < alphabet.length; i++) {
+//     var buttonElement = createKeyboard(alphabet[i]);
+//     document.getElementById("#keyboard").appendChild(buttonElement);
+// }
 
-};
 // createKeyboard();
-
 
 const answer = wordPicker();
 
