@@ -1,1 +1,46 @@
-/* No CSS */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.main-content-wrapper {
+  width: 100%;
+  height: 100vh;
+  /* background-image: url(./assets/blackboard-background.png); */
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-repeat: none;
+}
+
+.instructions-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 30%;
+  background-color: #dad2d2dc;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 2%;
+}
+
+p {
+  padding: 5% 0 5% 0;
+  font-size: 16px;
+}
+
+#hidden-word {
+  background-color: aquamarine;
+}
+
+.keyboard {
+  background-color: gray;
+}

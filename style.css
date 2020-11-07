@@ -4,27 +4,36 @@
   padding: 0;
 }
 
-.main-content-wrapper {
-  width: 100%;
-  height: 100vh;
-  /* background-image: url(./assets/blackboard-background.png); */
-  object-fit: contain;
-  background-repeat: none;
+body {
+  background-color: pink;
+  text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
-.instructions-container {
+.main-content-wrapper {
+  width: 100%;
+  /* background-image: url(./assets/blackboard-background.png); */
+  /* background-repeat: none; */
+  /* object-fit: contain; */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 30%;
+  align-items: center;
+}
+
+.instructions-container {
   background-color: #dad2d2dc;
   border: 1px solid black;
   border-radius: 3px;
-  padding: 2%;
+  padding: 30px 30px 0 30px;
+}
+
+.instructions-text {
+  font-size: 1.2em;
 }
 
 p {
-  padding: 5% 0 5% 0;
+  padding: 20px;
   font-size: 16px;
 }
 
@@ -34,4 +43,23 @@ p {
 
 .keyboard {
   background-color: gray;
+  padding: 20px;
 }
+
+.button-new-game {
+  width: 100px;
+  height: 45px;
+  margin: 20px;
+  border-radius: 5px;
+
+  
+}
+
+footer {
+  border-top: 1px solid black;
+  align-items: center;  
+}
+
+/* .button-new-game:active {
+  transform: 0.50%;
+} */

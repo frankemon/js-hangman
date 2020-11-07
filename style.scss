@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .main-content-wrapper {
+    width: 100%;
+    height: 100vh;
+    /* background-image: url(./assets/blackboard-background.png); */
+    object-fit: contain;
+    background-repeat: none;
+  }
+  
+  .instructions-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    background-color: #dad2d2dc;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 2%;
+  }
+  
+  p {
+    padding: 5% 0 5% 0;
+    font-size: 16px;
+  }
+  
+  #hidden-word {
+    background-color: aquamarine;
+  }
+  
+  .keyboard {
+    background-color: gray;
+  }
