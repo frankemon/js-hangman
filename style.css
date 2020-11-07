@@ -42,8 +42,8 @@ p {
 }
 
 .keyboard {
-  background-color: gray;
   padding: 20px;
+
 }
 
 .button-new-game {
@@ -51,8 +51,14 @@ p {
   height: 45px;
   margin: 20px;
   border-radius: 5px;
-
+  cursor: pointer;
   
+}
+
+.button-new-game:hover {
+  transition: all 0.3 ease-in-out;
+  border: solid 1px #fff;
+
 }
 
 footer {
@@ -60,6 +66,42 @@ footer {
   align-items: center;  
 }
 
-/* .button-new-game:active {
-  transform: 0.50%;
-} */
+
+#alphabet {
+  margin: 15px;
+  padding: 0;
+  max-width: 900px;
+  text-transform: capitalize;
+  text-align: center;
+
+}
+
+#alphabet:after {
+  content: "";
+  display: table;
+  clear: both;
+
+}
+
+#alphabet li {
+  float: left;
+  margin: 0 10px 10px 0;
+  list-style: none;
+  width: 50px;
+  height: 50px;
+  padding-top: 15px;
+  background: #fff;
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 5px;
+  border: solid 1px #fff;
+
+}
+
+#alphabet li:hover {
+  background: #c1d72e;
+  border: solid 1px #fff;
+  color: #fff;
+
+}

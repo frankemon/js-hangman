@@ -4,10 +4,31 @@ const wordBank = [
 
 const alphabet =
     'abcdefghijklmnopqrstuvwxyz'.split('');
-console.log(alphabet);
+console.log(alphabet); //can remove
 
 let blanks = [];
+let guess;
+let storedGuesses;
+let correctCounter;
 
+//create alphabet ul
+
+let buttons = function () {
+    myButtons = document.getElementById('keyboard');
+    letters = document.createElement('ul');
+    for (let index = 0; index < alphabet.length; index++) {
+        letters.id = 'alphabet';
+        list = document.createElement('li');
+        list.id = 'letter';
+        list.innerHTML = alphabet[index];
+        // check();  ?????
+        myButtons.appendChild(letters);
+        letters.appendChild(list);
+    }
+}
+buttons();
+
+// Pick a random word from wordBank
 function wordPicker() {
     let position = Math.random();
     position = position * (wordBank.length - 1);
@@ -18,7 +39,9 @@ function wordPicker() {
 }
 
 
-console.log(wordBank);
+console.log(wordBank); //can remove
+
+// Replace generatedWord with underscores
 function blankSpaces(string) {
     for (let index = 0; index < string.length; index++) {
         blanks.push('_');
