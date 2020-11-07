@@ -5,16 +5,14 @@
 }
 
 body {
-  background-color: pink;
+  background-color: #26619C ;
   text-align: center;
   font-family: Helvetica, Arial, sans-serif;
+  color: #F7F5FB;
 }
 
 .main-content-wrapper {
   width: 100%;
-  /* background-image: url(./assets/blackboard-background.png); */
-  /* background-repeat: none; */
-  /* object-fit: contain; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,86 +20,89 @@ body {
 }
 
 .instructions-container {
-  background-color: #dad2d2dc;
-  border: 1px solid black;
   border-radius: 3px;
-  padding: 30px 30px 0 30px;
+  padding: 10px 30px 0 30px;
 }
 
 .instructions-text {
   font-size: 1.2em;
+  padding-bottom: 5px;
 }
 
-p {
-  padding: 20px;
-  font-size: 16px;
-}
-
+/* Hidden word styling  */
 #hidden-word {
-  background-color: aquamarine;
+  font-size: 2em;
 }
 
-.keyboard {
-  padding: 20px;
-
-}
-
-.button-new-game {
-  width: 100px;
-  height: 45px;
-  margin: 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  
-}
-
-.button-new-game:hover {
-  transition: all 0.3 ease-in-out;
-  border: solid 1px #fff;
-
-}
-
-footer {
-  border-top: 1px solid black;
-  align-items: center;  
-}
-
+/* Keyboard styling */
 
 #alphabet {
-  margin: 15px;
+  margin-top: 15px;
   padding: 0;
   max-width: 900px;
   text-transform: capitalize;
-  text-align: center;
-
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 780px;  
+  justify-content: center;
 }
 
 #alphabet:after {
   content: "";
   display: table;
   clear: both;
-
+  
 }
 
 #alphabet li {
-  float: left;
   margin: 0 10px 10px 0;
   list-style: none;
   width: 50px;
   height: 50px;
   padding-top: 15px;
-  background: #fff;
-  color: #000;
+  background: #F7F5FB;
+  color: #26619C;
   font-weight: 700;
   cursor: pointer;
   border-radius: 5px;
-  border: solid 1px #fff;
-
+  border: solid 1px #F7F5FB;
+  
 }
 
 #alphabet li:hover {
-  background: #c1d72e;
-  border: solid 1px #fff;
-  color: #fff;
+  background: #26619C;
+  border: solid 2px #F7F5FB;
+  color: #F7F5FB;
+  
+}
 
+/* New game button styling */
+.button-new-game {
+  width: 120px;
+  height: 50px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #26619C;
+  background: #F7F5FB;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  
+}
+
+.button-new-game:hover {
+  transition: all 0.3 ease-in-out;
+  border: solid 2px #F7F5FB;
+  color: #F7F5FB;
+  background: #26619C;
+
+
+  
+}
+
+/* Footer styling */
+footer {
+  border-top: 1px solid black;
+  align-items: center;  
 }
