@@ -4,8 +4,8 @@ Hangman game:
 + 2) function that randomly chooses a word from the array
 + 3) create a blank element for each letter in the word 
 	(function that takes random word and shows as underscores)
-4) create keyboard
-5) compare letters chosen by player to letters in random word
++ 4) create keyboard
+5) compare letters chosen by player to letters in random word - function?
 6) remove letters already used (reduce opacity/fade out or disable property?)
 7) show/update images of hangman when user guesses wrong
 

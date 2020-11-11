@@ -36,25 +36,27 @@ body {
 
 /* Keyboard styling */
 
-#alphabet {
+#keyboard {
+  background-color: #26619C;
   margin-top: 15px;
   padding: 0;
   max-width: 900px;
-  text-transform: capitalize;
+  text-transform: uppercase;
   display: flex;
   flex-wrap: wrap;
   max-width: 780px;  
   justify-content: center;
+  border: none;
 }
 
-#alphabet:after {
+#keyboard:after {
   content: "";
   display: table;
   clear: both;
   
 }
 
-#alphabet li {
+/* #alphabet li {
   margin: 0 10px 10px 0;
   list-style: none;
   width: 50px;
@@ -74,7 +76,7 @@ body {
   border: solid 2px #F7F5FB;
   color: #F7F5FB;
   
-}
+} */
 
 /* New game button styling */
 .button-new-game {
@@ -106,3 +108,47 @@ footer {
   border-top: 1px solid black;
   align-items: center;  
 }
+
+#letter2:disabled {
+  color: darkgray;
+  background-color: gray;
+
+}
+
+#keyboard button {
+  margin: 0 10px 10px 0;
+  list-style: none;
+  width: 50px;
+  height: 50px;
+  background: #F7F5FB;
+  color: #26619C;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 5px;
+  border: solid 1px #F7F5FB;
+  text-transform: uppercase;
+  
+}
+
+#keyboard button:hover {
+  background: #26619C;
+  border: solid 2px #F7F5FB;
+  color: #F7F5FB;
+  
+}
+#keyboard button:disabled {
+  background: gray;
+  border: solid 2px #F7F5FB;
+  color: #F7F5FB;
+  cursor: auto;
+  
+}
+
+.disabled {
+  background: gray;
+  border: solid 2px #F7F5FB;
+  color: #F7F5FB;
+  cursor: auto;
+  
+}
+
