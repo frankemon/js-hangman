@@ -36,7 +36,7 @@ body {
 
 /* Keyboard styling */
 
-#keyboard {
+#keyboardtwo {
   background-color: #26619C;
   margin-top: 15px;
   padding: 0;
@@ -82,7 +82,7 @@ body {
 .button-new-game {
   width: 120px;
   height: 50px;
-  margin: 5px;
+  margin-top: 10px;
   border-radius: 5px;
   cursor: pointer;
   color: #26619C;
@@ -115,28 +115,30 @@ footer {
 
 }
 
-#keyboard button {
-  margin: 0 10px 10px 0;
+/* #A, #B, #C, #D, #E, #F, #G, #H, #I, #J, #K, #L ,#M , #N, #O, #P, #Q, #R, #S, #T, #U, #V, #W, #X, #Y, #Z { */
+  .keyboard-button {
+  margin: 10px 10px 0 0;
   list-style: none;
   width: 50px;
   height: 50px;
-  background: #F7F5FB;
+  background-color: #F7F5FB;
   color: #26619C;
   font-weight: 700;
   cursor: pointer;
   border-radius: 5px;
-  border: solid 1px #F7F5FB;
   text-transform: uppercase;
+  border: solid 2px #F7F5FB;
+
   
 }
 
-#keyboard button:hover {
-  background: #26619C;
+.keyboard-button:hover {
+  background-color: #26619C;
   border: solid 2px #F7F5FB;
   color: #F7F5FB;
   
 }
-#keyboard button:disabled {
+.keyboard-button:disabled {
   background: gray;
   border: solid 2px #F7F5FB;
   color: #F7F5FB;

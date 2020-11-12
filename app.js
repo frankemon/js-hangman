@@ -25,13 +25,14 @@ function generateKeyboard() {
     for (let index = 0; index < alphabet.length; index++) {
         let keyboard = document.createElement('button');
         keyboard.innerHTML = alphabet[index];
+        keyboard.className = "keyboard-button";
         keyboard.id = alphabet[index];
         keyboard.value = alphabet[index];
         keyboard.onclick = function () {
             getGuess(alphabet[index]);
         }
 
-        document.querySelector('.keyboardtwo').appendChild(keyboard);
+        document.querySelector('.keyboard').appendChild(keyboard);
 
     }
 }
@@ -39,10 +40,10 @@ function generateKeyboard() {
 function getGuess(letter) {
     console.log(letter);
     let clickedButton = document.querySelector('#' + letter);
-    console.log('getGuess: ' + clickedButton);
-    // clickedButton.disabled = true;
+    console.log('getGuess: ', clickedButton);
+    clickedButton.disabled = true;
 }
-getGuess();
+// getGuess();
 
 // Pick a random word from wordBank
 function wordPicker() {
