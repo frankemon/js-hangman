@@ -5,15 +5,12 @@ const wordBank = [ // An array of available words
 const alphabet = // All letters in the alphabet put to uppercase
     'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
 
-const imgs = ['img/hangman-0.svg', 'img/hangman-1.svg', 'img/hangman-2.svg', 'img/hangman-3.svg', 'img/hangman-4.svg', 'img/hangman-5.svg'];
+const imgs = ['img/hangman-0.svg', 'img/hangman-1.svg', 'img/hangman-2.svg', 'img/hangman-3.svg', 'img/hangman-4.svg', 'img/hangman-5.svg', 'img/hangman-6.svg'];
 
 let guesses = 0;        // Guesses starting on 0
 let guessesLeft = 6;    // Max guesses remaining
 let hangmanImg;         // Hangman images
 let blanks = [];        // picked word gets replaced with blanks
-let secretWord = [];   // picked word is stored in an array
-let hiddenWord = document.querySelectorAll('#hiddenWord'); 
-// let hiddenWord; 
 let generatedWord;
 let clickedButton;
 
@@ -26,16 +23,15 @@ function wordPicker() {
     position = Math.floor(position);
     generatedWord = wordBank[position].toUpperCase();
     console.log(generatedWord);
-    secretArray(generatedWord);
     return generatedWord;
     
 }
 
 // secretWord function holds the generatedWord
-function secretArray(generatedWord) {
-    secretWord = generatedWord.split('');
-    console.log(secretWord);
-}
+// function secretArray(generatedWord) {
+//     secretWord = generatedWord.split('');
+//     console.log(secretWord);
+// }
 
 // create alphabet as buttons 
 function generateKeyboard() {
@@ -58,9 +54,9 @@ function generateKeyboard() {
 function blankSpaces(string) {
     for (let index = 0; index < string.length; index++) {
         blanks.push('_');
-
+       
     }
-    updateDOM(); // ??????????????
+    updateDOM();
 }
 
 // Guess letter with onclick
@@ -70,15 +66,24 @@ function testGuess(e) {
     }
     console.log(e.target.value);
     let guessedLetter = e.target.value;
-    guesses = guesses + 1;
 
     // First check for letter
     const indexOfFirst = generatedWord.indexOf(clickedButton.value); 
     console.log("first occurence at ", indexOfFirst);
     if (indexOfFirst < 0 ) {
-        return;
+        guesses = guesses + 1;
+            guessesLeft = guessesLeft - 1;
+            document.getElementById('hangman').src = imgs[guesses];
+
+            if (guessesLeft === 0) {
+                
+                document.getElementById('keyboard').style.display = 'none';
+            }
+            return; 
     } else {
-        // hiddenWord[indexOfFirst].firstChild.value = clickedButton; /////// ?
+        blanks[indexOfFirst] = guessedLetter;
+        updateDOM(); 
+
     }
     
     // Second check for letter
@@ -87,10 +92,26 @@ function testGuess(e) {
     if (indexOfSecond < 0 ) {
         return;
     } else {
-        // hiddenWord[indexOfSecond].firstChild.value = clickedButton; /////// ?
+        blanks[indexOfSecond] = guessedLetter;
+        
+        updateDOM(); 
     }
     
+    // updateDOM();
 }
+
+
+
+////////////////////////// for 3 or more letters
+// secretWord.forEach((letter, i) => {
+//     if (letter === guessedLetter) {
+//         blanks[i] = guessedLetter;
+//     }
+// });
+///////////////////////////
+
+
+
 // Disable guessed letter
 function getGuess(letter) {
     console.log(letter);
@@ -112,6 +133,7 @@ keyboard.addEventListener('click', testGuess);
 // Initiate game as new game button //
 /////////////////////////////////////
 function startGame() {
+
     generateKeyboard();
 
 
