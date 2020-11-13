@@ -56,6 +56,40 @@ body {
   background: #26619C;
   
 }
+.button-new-game {
+  width: 120px;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #26619C;
+  background: #F7F5FB;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  
+}
+
+#button-new-game {
+  width: 120px;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #26619C;
+  background: #F7F5FB;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  
+}
+#button-new-game:hover {
+  transition: all 0.3 ease-in-out;
+  border: solid 2px #F7F5FB;
+  color: #F7F5FB;
+  background: #26619C;
+  
+}
 
 /* Footer styling */
 footer {
@@ -111,19 +145,7 @@ footer {
   
 }
 
-.button-new-game {
-    width: 120px;
-    height: 50px;
-    margin-top: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    color: #26619C;
-    background: #F7F5FB;
-    font-weight: 700;
-    text-transform: uppercase;
-    border: none;
-    
-  }
+
 
   .gameOverMessage {
     font-size: 1.2em;

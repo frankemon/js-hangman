@@ -1,5 +1,5 @@
 const wordBank = [ // An array of available words
-    'admission', 'asymmetric', 'abnormal', 'anomaly', 'breakfast', 'brainstorm', 'basket', 'ballistrade', 'chemistry', 'chimpanzee', 'castle', 'curtain', 'delicate', 'discreet', 'divorce', 'drain', 'bee', 'dog', 'cat', 'computer', 'screen', 'car', 'zoo', 'yellow', 'pipe', 'van', 'bat', 'cow', 'fish', 'folder', 'surf', 'wave', 'skate', 'code'
+    'admission', 'asymmetric', 'abnormal', 'anomaly', 'breakfast', 'brainstorm', 'basket', 'ballistrade', 'chemistry', 'chimpanzee', 'castle', 'curtain', 'delicate', 'discreet', 'divorce', 'drain', 'bee', 'dog', 'cat', 'computer', 'screen', 'car', 'zoo', 'yellow', 'pipe', 'van', 'bat', 'cow', 'fish', 'folder', 'surf', 'wave', 'skate', 'code', 'ball', 'tennis', 'drive', 'xylophone', 'bread', 'pasta', 'hamburger', 'sorbet', 'rice', 'round', 'square'
 ];
 
 const alphabet = // All letters in the alphabet put to uppercase
@@ -14,8 +14,6 @@ let blanks = [];        // picked word gets replaced with blanks
 let generatedWord;
 let clickedButton;
 
-
-
 // Pick a random word from wordBank and change to uppercase
 function wordPicker() {
     let position = Math.random();
@@ -26,12 +24,6 @@ function wordPicker() {
     return generatedWord;
     
 }
-
-// secretWord function holds the generatedWord
-// function secretArray(generatedWord) {
-//     secretWord = generatedWord.split('');
-//     console.log(secretWord);
-// }
 
 // create alphabet as buttons 
 function generateKeyboard() {
@@ -59,7 +51,7 @@ function blankSpaces(string) {
     updateDOM();
 }
 
-// Guess letter with onclick
+// Guess letter with onclick, general gameplay
 function testGuess(e) {
     if (e.target.tagName !=='BUTTON') {
         return;
@@ -75,13 +67,21 @@ function testGuess(e) {
             guessesLeft = guessesLeft - 1;
             document.getElementById('hangman').src = imgs[guesses];
             if (guessesLeft === 0) {   // && guesses === 6
+
+                // when the game is over
                 document.getElementById('keyboard').style.display = 'none';
                 document.getElementById('button-start-game').style.display = 'none';
+
+                // if the user lost the game
                 let gameOverMessage = document.createElement('div');
                 gameOverMessage.innerHTML = `You lost. The correct word was ${generatedWord}`; // 
                 gameOverMessage.classList = "gameOverMessage";
                 document.body.appendChild(gameOverMessage);
                 let newGame = document.createElement('BUTTON');
+
+                // if the user won the game
+
+                // new game button to play again
                 newGame.innerHTML = "NEW GAME";
                 newGame.classList = "button-new-game";
                 document.body.appendChild(newGame);
@@ -107,17 +107,6 @@ function testGuess(e) {
 }
 
 
-
-////////////////////////// for 3 or more letters
-// secretWord.forEach((letter, i) => {
-//     if (letter === guessedLetter) {
-//         blanks[i] = guessedLetter;
-//     }
-// });
-///////////////////////////
-
-
-
 // Disable guessed letter
 function getGuess(letter) {
     console.log(letter);
@@ -131,13 +120,12 @@ function updateDOM() {
     document.querySelector('#hiddenWord').textContent = blanks.join(' ');
 }
 
-// Event listeners
 keyboard.addEventListener('click', testGuess);  
-// document.getElementById("myBtn").addEventListener("click", displayDate);
 
-///////////////////////////////////////
-// Initiate game as new game button //
-/////////////////////////////////////
+//////////////////////////
+// Initiate game  ///////
+////////////////////////
+
 function startGame() {
     generateKeyboard();
     const answer = wordPicker();
@@ -153,6 +141,9 @@ function startGame() {
 
 let startGameButtonEl = document.querySelector('#button-start-game');
 startGameButtonEl.addEventListener('click', startGame);
+
 let newGameButton = document.querySelector('#button-new-game');
-newGameButton.addEventListener('click', startGame); //updateDOM ??
+newGameButton.addEventListener('click', updateDOM); //updateDOM ??
+// document.getElementById("myBtn").addEventListener("click", displayDate);
+
     
