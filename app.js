@@ -74,10 +74,17 @@ function testGuess(e) {
         guesses = guesses + 1;
             guessesLeft = guessesLeft - 1;
             document.getElementById('hangman').src = imgs[guesses];
-
-            if (guessesLeft === 0) {
-                
+            if (guessesLeft === 0) {   // && guesses === 6
                 document.getElementById('keyboard').style.display = 'none';
+                document.getElementById('button-start-game').style.display = 'none';
+                let gameOverMessage = document.createElement('div');
+                gameOverMessage.innerHTML = `You lost. The correct word was ${generatedWord}`; // 
+                gameOverMessage.classList = "gameOverMessage";
+                document.body.appendChild(gameOverMessage);
+                let newGame = document.createElement('BUTTON');
+                newGame.innerHTML = "NEW GAME";
+                newGame.classList = "button-new-game";
+                document.body.appendChild(newGame);
             }
             return; 
     } else {
@@ -97,7 +104,6 @@ function testGuess(e) {
         updateDOM(); 
     }
     
-    // updateDOM();
 }
 
 
@@ -119,7 +125,6 @@ function getGuess(letter) {
     console.log('getGuess: ', clickedButton);
     clickedButton.disabled = true;
 }
-// getGuess();
 
 // Update DOM and create blank spaces
 function updateDOM() {
@@ -128,29 +133,26 @@ function updateDOM() {
 
 // Event listeners
 keyboard.addEventListener('click', testGuess);  
+// document.getElementById("myBtn").addEventListener("click", displayDate);
 
 ///////////////////////////////////////
 // Initiate game as new game button //
 /////////////////////////////////////
 function startGame() {
-
     generateKeyboard();
-
-
     const answer = wordPicker();
     blankSpaces(answer);
     startGameButtonEl.disabled = true;   
 }
+// function newGame() {
+//     generateKeyboard();
+//     const answer = wordPicker();
+//     blankSpaces(answer);
+//     startGameButtonEl.disabled = true;   
+// }
+
 let startGameButtonEl = document.querySelector('#button-start-game');
 startGameButtonEl.addEventListener('click', startGame);
-
-// e.target.value on click needs to store the vale in a new variable
-// run indexOf function on secretArray using new variable as param to indexOf secretArray.indexOf('X');
-// -1 or we gottem boys, saves in guesses
-// correctGuess = displaying pictures
-
-// disable start game button on click, create new button for new game
-
-
-
+let newGameButton = document.querySelector('#button-new-game');
+newGameButton.addEventListener('click', startGame); //updateDOM ??
     

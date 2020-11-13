@@ -111,48 +111,21 @@ footer {
   
 }
 
-/* Old keyboard styling */
+.button-new-game {
+    width: 120px;
+    height: 50px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #26619C;
+    background: #F7F5FB;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    
+  }
 
-/* #keyboardtwo {
-  background-color: #26619C;
-  margin-top: 15px;
-  padding: 0;
-  max-width: 900px;
-  text-transform: uppercase;
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 780px;  
-  justify-content: center;
-  border: none;
-} */
-
-/* #keyboard:after {
-  content: "";
-  display: table;
-  clear: both;
-  
-} */
-
-/* #alphabet li {
-  margin: 0 10px 10px 0;
-  list-style: none;
-  width: 50px;
-  height: 50px;
-  padding-top: 15px;
-  background: #F7F5FB;
-  color: #26619C;
-  font-weight: 700;
-  cursor: pointer;
-  border-radius: 5px;
-  border: solid 1px #F7F5FB;
-  
-}
-
-#alphabet li:hover {
-  background: #26619C;
-  border: solid 2px #F7F5FB;
-  color: #F7F5FB;
-  
-} 
-
-* #A, #B, #C, #D, #E, #F, #G, #H, #I, #J, #K, #L ,#M , #N, #O, #P, #Q, #R, #S, #T, #U, #V, #W, #X, #Y, #Z */
+  .gameOverMessage {
+    font-size: 1.2em;
+    padding: 10px 0 10px 0;
+  }
