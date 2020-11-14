@@ -84,7 +84,13 @@ function testGuess(e) {
         return; 
    
     } else {
-        blanks[indexOfFirst] = guessedLetter;
+        for (let index = 0; index < generatedWord.length; index++) {
+            const letter = generatedWord[index];
+            if (letter === guessedLetter) {
+                blanks[index] = guessedLetter;
+            }
+            
+        }
         if (blanks.join("") === generatedWord) { 
             document.getElementById('keyboard').style.display = 'none';
             let gameWonMessage = document.createElement('div');
@@ -92,22 +98,12 @@ function testGuess(e) {
             gameWonMessage.classList = "message";
             document.body.appendChild(gameWonMessage);
         
-    }
+        }
         updateDOM(); 
 
         
     }
     
-    // Second check for letter
-    const indexOfSecond = generatedWord.indexOf(clickedButton.value, indexOfFirst + 1);
-    // console.log("second occurence at ", indexOfSecond);
-    if (indexOfSecond < 0 ) {
-        return;
-    } else {
-        blanks[indexOfSecond] = guessedLetter;
-        
-        updateDOM(); 
-    }
     
 }
 
