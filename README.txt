@@ -7,7 +7,9 @@ Basic steps to the hangman game:
 + 5) Compare letters chosen by player to letters in random word
 + 6) Remove letters already used 
 + 7) Show/update images of hangman when user guesses wrong
-8) You win/you lose message showing hidden word and play again option
++ 8) Try again button to refresh page
+
+9) You win/you lose message showing hidden word and play again option
 
 Random words generated from:
 https://www.randomword.com/words/d.html
@@ -23,7 +25,9 @@ view code (VSC, Sublime etc)
 /////////////// CURRENT STATE OF GAME //////////////////
 /////////////////////////////////////////////////////////
 
-New game function not working as intended
+Positioning of try again button and you lose text
+
+You win text
 
 Haven't looked at responsiveness
 

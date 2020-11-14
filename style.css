@@ -63,19 +63,6 @@ body {
   
 }
 
-/* .button-new-game {
-  width: 120px;
-  height: 50px;
-  margin-top: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  color: #26619C;
-  background: #F7F5FB;
-  font-weight: 700;
-  text-transform: uppercase;
-  border: none;
-  
-} */
 
 #button-try-again {
   width: 120px;
@@ -148,7 +135,7 @@ body {
   
 }
 
-  .gameOverMessage {
+  .message {
     font-size: 1.2em;
     padding: 10px 0 10px 0;
 
