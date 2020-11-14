@@ -21,7 +21,7 @@ function wordPicker() {
     generatedWord = wordBank[position].toUpperCase();
     console.log(generatedWord);
     return generatedWord;
-    
+
 }
 
 // create alphabet as buttons 
@@ -40,82 +40,80 @@ function generateKeyboard() {
 
     }
     document.getElementById("button-try-again").removeAttribute("hidden");
-    
+
 }
 
 // Replace generatedWord with underscores         
 function blankSpaces(string) {
     for (let index = 0; index < string.length; index++) {
         blanks.push('_');
-       
+
     }
     updateDOM();
 }
 
 // Guess letter with onclick, general gameplay
 function testGuess(e) {
-    if (e.target.tagName !=='BUTTON') {
+    if (e.target.tagName !== 'BUTTON') {
         return;
     }
-    // checkGameState();
     console.log(e.target.value);
     let guessedLetter = e.target.value;
-    
+
     // First check for letter
-    const indexOfFirst = generatedWord.indexOf(clickedButton.value); 
-    // console.log("first occurence at ", indexOfFirst);
-    if (indexOfFirst < 0 ) {
+    const indexOfFirst = generatedWord.indexOf(clickedButton.value);
+    if (indexOfFirst < 0) {
         guesses = guesses + 1;
         guessesLeft = guessesLeft - 1;
         document.getElementById('hangman').src = imgs[guesses];
-        
-        if (guessesLeft === 0) { 
-            
+
+        if (guessesLeft === 0) {
+
             // when the game is over
             document.getElementById('keyboard').style.display = 'none';
-            
+
             // if the user lost the game
             let gameLostMessage = document.createElement('div');
             gameLostMessage.innerHTML = `You lost. The correct word was ${generatedWord}`; // 
             gameLostMessage.classList = "message";
             document.body.appendChild(gameLostMessage);
-            // if the user won the game
-        } 
-        return; 
-   
+        }
+        return;
+
     } else {
+        // if the user won the game
         for (let index = 0; index < generatedWord.length; index++) {
             const letter = generatedWord[index];
             if (letter === guessedLetter) {
                 blanks[index] = guessedLetter;
             }
-            
+
         }
-        if (blanks.join("") === generatedWord) { 
+        if (blanks.join("") === generatedWord) {
             document.getElementById('keyboard').style.display = 'none';
             let gameWonMessage = document.createElement('div');
             gameWonMessage.innerHTML = "You win! Click try again to play more."; // 
             gameWonMessage.classList = "message";
             document.body.appendChild(gameWonMessage);
-        
-        }
-        updateDOM(); 
 
-        
+        }
+        updateDOM();
+
+
     }
-    
-    
+
+
 }
 
 // Hide start game button
 function hideStartGame() {
     const hideStart = document.getElementById("button-start-game");
     if (hideStart.style.display === "none") {
-      hideStart.style.display = "block";
+        hideStart.style.display = "block";
     } else {
-      hideStart.style.display = "none";
+        hideStart.style.display = "none";
     }
-  }
+}
 
 // Disable guessed letter
 function getGuess(letter) {
@@ -130,7 +128,7 @@ function updateDOM() {
     document.querySelector('#hiddenWord').textContent = blanks.join(' ');
 }
 
-keyboard.addEventListener('click', testGuess);  
+keyboard.addEventListener('click', testGuess);
 
 
 // Start game function
@@ -139,15 +137,10 @@ function startGame() {
     generateKeyboard();
     const answer = wordPicker();
     blankSpaces(answer);
-    startGameButtonEl.disabled = true;   
+    startGameButtonEl.disabled = true;
 }
 
-// function checkGameState() {
-//     if (hangman.src.slice(-12) == '5.svg')
-//     console.log("game over")
-// }
-
-function reload () {
+function reload() {
     window.location.reload(true);
 }
 
