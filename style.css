@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
 }
 
 body {
@@ -9,6 +10,7 @@ body {
   text-align: center;
   font-family: Helvetica, Arial, sans-serif;
   color: #F7F5FB;
+
 }
 
 .main-content-wrapper {
@@ -17,21 +19,25 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
 
 .instructions-container {
   border-radius: 3px;
   padding: 10px 30px 0 30px;
+
 }
 
 .instructions-text {
   font-size: 1.2em;
   padding-bottom: 5px;
+
 }
 
 /* Hidden word styling  */
 #hiddenWord {
   font-size: 2em;
+
 }
 
 /* New game button styling */
@@ -56,21 +62,22 @@ body {
   background: #26619C;
   
 }
-.button-new-game {
-  width: 120px;
-  height: 50px;
-  margin-top: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  color: #26619C;
-  background: #F7F5FB;
-  font-weight: 700;
-  text-transform: uppercase;
-  border: none;
-  
-}
 
-#button-new-game {
+/* .button-new-game {
+  width: 120px;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #26619C;
+  background: #F7F5FB;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  
+} */
+
+#button-try-again {
   width: 120px;
   height: 50px;
   margin-top: 10px;
@@ -83,7 +90,7 @@ body {
   border: none;
   
 }
-#button-new-game:hover {
+#button-try-again:hover {
   transition: all 0.3 ease-in-out;
   border: solid 2px #F7F5FB;
   color: #F7F5FB;
@@ -91,20 +98,16 @@ body {
   
 }
 
-/* Footer styling */
-footer {
-  border-top: 1px solid black;
-  align-items: center;  
-}
-
 #letter2:disabled {
   color: darkgray;
   background-color: gray;
 
 }
+
  /* Keyboard styling */
 .keyboard {
   max-width: 800px;
+
 }
 
   .keyboard-button {
@@ -120,7 +123,6 @@ footer {
   text-transform: uppercase;
   border: solid 2px #F7F5FB;
 
-  
 }
 
 .keyboard-button:hover {
@@ -129,6 +131,7 @@ footer {
   color: #F7F5FB;
   
 }
+
 .keyboard-button:disabled {
   background: gray;
   border: solid 2px #F7F5FB;
@@ -145,9 +148,8 @@ footer {
   
 }
 
-
-
   .gameOverMessage {
     font-size: 1.2em;
     padding: 10px 0 10px 0;
+
   }
