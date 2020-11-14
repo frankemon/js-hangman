@@ -9,7 +9,6 @@ const imgs = ['img/hangman-0.svg', 'img/hangman-1.svg', 'img/hangman-2.svg', 'im
 
 let guesses = 0;        // Guesses starting on 0
 let guessesLeft = 6;    // Max guesses remaining
-let hangmanImg;         // Hangman images
 let blanks = [];        // picked word gets replaced with blanks
 let generatedWord;
 let clickedButton;
@@ -58,48 +57,53 @@ function testGuess(e) {
     if (e.target.tagName !=='BUTTON') {
         return;
     }
+    // checkGameState();
     console.log(e.target.value);
     let guessedLetter = e.target.value;
     
     // First check for letter
     const indexOfFirst = generatedWord.indexOf(clickedButton.value); 
-    console.log("first occurence at ", indexOfFirst);
+    // console.log("first occurence at ", indexOfFirst);
     if (indexOfFirst < 0 ) {
         guesses = guesses + 1;
         guessesLeft = guessesLeft - 1;
         document.getElementById('hangman').src = imgs[guesses];
+        
         if (guessesLeft === 0) { 
             
             // when the game is over
             document.getElementById('keyboard').style.display = 'none';
-            document.getElementById('button-start-game').style.display = 'none';
             
             // if the user lost the game
-            let gameOverMessage = document.createElement('div');
-            gameOverMessage.innerHTML = `You lost. The correct word was ${generatedWord}`; // 
-            gameOverMessage.classList = "gameOverMessage";
-            document.body.appendChild(gameOverMessage);
-            
+            let gameLostMessage = document.createElement('div');
+            gameLostMessage.innerHTML = `You lost. The correct word was ${generatedWord}`; // 
+            gameLostMessage.classList = "message";
+            document.body.appendChild(gameLostMessage);
             // if the user won the game
+        } 
+        return; 
+   
+    } else {
+        for (let index = 0; index < generatedWord.length; index++) {
+            const letter = generatedWord[index];
+            if (letter === guessedLetter) {
+                blanks[index] = guessedLetter;
+            }
             
         }
-        return; 
-    } else {
-        blanks[indexOfFirst] = guessedLetter;
+        if (blanks.join("") === generatedWord) { 
+            document.getElementById('keyboard').style.display = 'none';
+            let gameWonMessage = document.createElement('div');
+            gameWonMessage.innerHTML = "You win! Click try again to play more."; // 
+            gameWonMessage.classList = "message";
+            document.body.appendChild(gameWonMessage);
+        
+        }
         updateDOM(); 
+
         
     }
     
-    // Second check for letter
-    const indexOfSecond = generatedWord.indexOf(clickedButton.value, indexOfFirst + 1);
-    console.log("second occurence at ", indexOfSecond);
-    if (indexOfSecond < 0 ) {
-        return;
-    } else {
-        blanks[indexOfSecond] = guessedLetter;
-        
-        updateDOM(); 
-    }
     
 }
 
@@ -115,9 +119,9 @@ function hideStartGame() {
 
 // Disable guessed letter
 function getGuess(letter) {
-    console.log(letter);
+    // console.log(letter);
     clickedButton = document.querySelector('#' + letter);
-    console.log('getGuess: ', clickedButton);
+    // console.log('getGuess: ', clickedButton);
     clickedButton.disabled = true;
 }
 
@@ -128,9 +132,8 @@ function updateDOM() {
 
 keyboard.addEventListener('click', testGuess);  
 
-//////////////////////////
-// Initiate game  ///////
-////////////////////////
+
+// Start game function
 
 function startGame() {
     generateKeyboard();
@@ -139,6 +142,10 @@ function startGame() {
     startGameButtonEl.disabled = true;   
 }
 
+// function checkGameState() {
+//     if (hangman.src.slice(-12) == '5.svg')
+//     console.log("game over")
+// }
 
 function reload () {
     window.location.reload(true);
@@ -146,17 +153,3 @@ function reload () {
 
 let startGameButtonEl = document.querySelector('#button-start-game');
 startGameButtonEl.addEventListener('click', startGame);
-
-// document.querySelector('.button-new-gameEl');
-newGameButton.addEventListener('click', reload); 
-
-// document.querySelector('#button-new-game')
-//     .addEventListener('click', () => {
-//         window.location.reload(true);
-//     });
-
-    // const newGameButton = document.createElement("BUTTON");   
-    // newGameButton.innerHTML = "NEW GAME";   
-    // newGameButton.classList = "button-new-game";
-    // document.querySelector('.button-new-gameEl');
-    // document.body.appendChild(newGameButton); 
