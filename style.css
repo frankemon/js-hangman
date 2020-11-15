@@ -13,6 +13,11 @@ body {
 
 }
 
+h1 {
+  padding-top: 100px; 
+
+}
+
 .main-content-wrapper {
   width: 100%;
   display: flex;
@@ -23,7 +28,6 @@ body {
 }
 
 .instructions-container {
-  border-radius: 3px;
   padding: 10px 30px 0 30px;
 
 }
@@ -33,6 +37,7 @@ body {
   padding-bottom: 5px;
 
 }
+
 
 /* Hidden word styling  */
 #hiddenWord {
@@ -91,6 +96,8 @@ body {
 
 }
 
+
+
  /* Keyboard styling */
 .keyboard {
   max-width: 800px;
@@ -139,4 +146,64 @@ body {
     font-size: 1.2em;
     padding: 10px 0 10px 0;
 
+  }
+
+
+  /* Media query */
+  /* Iphone 8 */
+  @media screen and (max-width: 400px) { 
+    h1 {
+      font-size: 1.5em;
+      padding-bottom: 5px;
+    }
+    .instructions-container {
+      padding: 10px 15px 0 15px;
+    
+    }
+    .instructions-text {
+      font-size: 1em;
+    }
+    #hiddenWord {
+      font-size: 1.2em;
+    
+    }
+    .keyboard-button {
+      margin: 10px 10px 0 0;
+      width: 40px;
+      height: 40px;
+    
+    }
+    #button-start-game {
+      width: 100px;
+      height: 50px;
+      
+    }
+    #button-try-again {
+      width: 100px;
+      height: 40px;
+      margin-bottom: 15px;
+      
+    }
+    
+    #hangman {
+      max-height: 250px;
+    }
+
+  }
+
+  /* Ipad */
+  @media screen and (max-width: 800px) { 
+    
+    .keyboard {
+      max-width: 650px;
+    }
+
+    .keyboard-button {
+      margin: 10px 10px 0 0;
+      width: 50px;
+      height: 50px;
+    
+    }
+    
+    
   }
