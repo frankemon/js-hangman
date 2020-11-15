@@ -8,11 +8,11 @@ Basic steps to the hangman game:
 + 6) Remove letters already used 
 + 7) Show/update images of hangman when user guesses wrong
 + 8) Try again button to refresh page
-
-9) You win/you lose message showing hidden word and play again option
++ 9) You win/you lose message showing hidden word and play again option
++ 10) Basic responsivness
 
 Random words generated from:
-https://www.randomword.com/words/d.html
+https://www.randomword.com/words/
 
 /////////////////////////////////////////////////////////
 /////////////// How to open and run game ////////////////
@@ -25,13 +25,4 @@ view code (VSC, Sublime etc)
 /////////////// CURRENT STATE OF GAME //////////////////
 /////////////////////////////////////////////////////////
 
-Positioning of try again button and you lose text
-
-You win text
-
-Haven't looked at responsiveness
-
-No "life" counter - does not seem essential
-
-Could use styling touch ups, such as whitespace between 
-<h> and <p> sections
+Funcitoning.
